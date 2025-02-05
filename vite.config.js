@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   assetsPublicPath: "./",
-  base: '/echarts/',
+  base: '/vue_echarts/',
   publicPath: "./",
   resolve: {
     alias: {
