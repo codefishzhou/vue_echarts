@@ -1,0 +1,9 @@
+import{p as E,b as T}from"./reactivity.esm-bundler.5b40c9db.js";/**
+* @vue/shared v3.5.13
+* (c) 2018-present Yuxi (Evan) You and Vue contributors
+* @license MIT
+**/const w={},C=Object.assign,x=Array.isArray,u=e=>typeof e=="function",H=e=>e!==null&&typeof e=="object",k=e=>(H(e)||u(e))&&u(e.then)&&u(e.catch);let g;const p=()=>g||(g=typeof globalThis!="undefined"?globalThis:typeof self!="undefined"?self:typeof window!="undefined"?window:typeof global!="undefined"?global:{});/**
+* @vue/runtime-core v3.5.13
+* (c) 2018-present Yuxi (Evan) You and Vue contributors
+* @license MIT
+**/function b(e,n,t,s){try{return s?e(...s):e()}catch(r){S(r,n,t)}}function I(e,n,t,s){if(u(e)){const r=b(e,n,t,s);return r&&k(r)&&r.catch(o=>{S(o,n,t)}),r}if(x(e)){const r=[];for(let o=0;o<e.length;o++)r.push(I(e[o],n,t,s));return r}}function S(e,n,t,s=!0){const r=n?n.vnode:null,{errorHandler:o,throwUnhandledErrorInProduction:l}=n&&n.appContext.config||w;if(n){let c=n.parent;const f=n.proxy,_=`https://vuejs.org/error-reference/#runtime-${t}`;for(;c;){const a=c.ec;if(a){for(let d=0;d<a.length;d++)if(a[d](e,f,_)===!1)return}c=c.parent}if(o){E(),b(o,null,10,[e,f,_]),T();return}}y(e,t,r,s,l)}function y(e,n,t,s=!0,r=!1){if(r)throw e;console.error(e)}let j=null;/*! #__NO_SIDE_EFFECTS__ */function O(e,n){return u(e)?(()=>C({name:e.name},n,{setup:e}))():e}p().requestIdleCallback;p().cancelIdleCallback;function A(e,n,t=i,s=!1){if(t){const r=t[e]||(t[e]=[]),o=n.__weh||(n.__weh=(...l)=>{E();const c=N(t),f=I(n,t,e,l);return c(),T(),f});return s?r.unshift(o):r.push(o),o}}const R=e=>(n,t=i)=>{(!m||e==="sp")&&A(e,(...s)=>n(...s),t)},P=R("m");let i=null;const U=()=>i||j;let h;{const e=p(),n=(t,s)=>{let r;return(r=e[t])||(r=e[t]=[]),r.push(s),o=>{r.length>1?r.forEach(l=>l(o)):r[0](o)}};h=n("__VUE_INSTANCE_SETTERS__",t=>i=t),n("__VUE_SSR_SETTERS__",t=>m=t)}const N=e=>{const n=i;return h(e),e.scope.on(),()=>{e.scope.off(),h(n)}};let m=!1;export{O as d,U as g,P as o};
