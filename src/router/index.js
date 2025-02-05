@@ -83,36 +83,36 @@ const router = createRouter({
 
 //全局路由守卫
 // let flag = true
-router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem("token");
-  let userName = null;
+// router.beforeEach((to, from, next) => {
+//   const token = localStorage.getItem("token");
+//   let userName = null;
   
-  try {
-    userName = token ? JSON.parse(token) : null;
-  } catch (e) {
-    localStorage.removeItem("token"); // 清除无效的 token
-  }
+//   try {
+//     userName = token ? JSON.parse(token) : null;
+//   } catch (e) {
+//     localStorage.removeItem("token"); // 清除无效的 token
+//   }
 
-  // 访问登录页面
-  if (to.path === "/login") {
-    if (userName) {
-      next({ path: "/student/home" }); // 重定向到首页
-    } else {
-      next();
-    }
-    return;
-  }
+//   // 访问登录页面
+//   if (to.path === "/login") {
+//     if (userName) {
+//       next({ path: "/student/home" }); // 重定向到首页
+//     } else {
+//       next();
+//     }
+//     return;
+//   }
   
-  // 访问其他页面
-  if (!userName) {
-    if (to.path === "/404" || to.path === "/sign") {
-      next();
-    } else {
-      next({ path: "/login" });
-    }
-    return;
-  }
+//   // 访问其他页面
+//   if (!userName) {
+//     if (to.path === "/404" || to.path === "/sign") {
+//       next();
+//     } else {
+//       next({ path: "/login" });
+//     }
+//     return;
+//   }
   
-  next();
-});
+//   next();
+// });
 export default router;
